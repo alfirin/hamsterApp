@@ -1,0 +1,13 @@
+body {
+	background: url(/images/good-bad.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.hamster {
+	position: absolute;
+    border-style:solid;
+    border-color:#555555;
+}
