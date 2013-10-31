@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="hamsterApp">
 <head>
 	<title>Hamster App</title>
 	
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-    <script src="js/lib/jquery.ui.touch-punch.min.js"></script>
+    <script src="scripts/lib/jquery.ui.touch-punch.min.js"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
-	<script src="/js/hamster.js"></script>
+	<script src="/scripts/hamster.js"></script>
 
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="/css/app.css">
+	<link rel="stylesheet" href="/styles/app.css">
 </head>
 <body ng-controller="MainCtrl" >
 	<div class="navbar navbar-inverse">
@@ -21,7 +21,7 @@
 			<button id="createButton" ng-click="createHamster()" class="btn btn-info pull-right">Create Hamster</button>
 		</div>
 	</div>
-	<div hamster-app ng-repeat="hamster in hamsters" hamster="hamster" class="hamster" ondelete="deleteHamster(id)">
+	<div hamster-dir ng-repeat="hamster in hamsters" hamster="hamster" class="hamster" ondelete="deleteHamster(id)">
         <img src="/images/hamster.jpeg" alt="Drag me" width="110" height="90">
 	</div>
 </body>

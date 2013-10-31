@@ -1,6 +1,6 @@
-var app = angular.module('app', []);
+var app = angular.module('hamsterApp', []);
 
-app.directive('hamsterApp', function (socket) {
+app.directive('hamsterDir', function (socket) {
   var linker = function (scope, element, attrs) {
     element.draggable({
       drag: function (event, ui) {
