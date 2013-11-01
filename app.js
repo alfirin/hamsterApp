@@ -25,4 +25,5 @@ io.sockets.on('connection', function(socket) {
 	});
 });
 
-server.listen(3000);
+// For Heroku port
+server.listen(process.env.PORT || 3000);
