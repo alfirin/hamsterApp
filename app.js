@@ -1,4 +1,6 @@
-var config = require('./config/config.js');
+'use strict';
+
+require('./config/config.js');
 var express = require('express');
 var app = express();
 var http = require('http');
@@ -7,29 +9,30 @@ var socketIo = require('socket.io');
 // Create the Http server
 var server = http.createServer(app);
 
-var developmentEnv = 'development' == app.get('env');
+var developmentEnv = 'development' === app.get('env');
+
+if (developmentEnv) {
+  console.log('Development environment');
+  app.configure(function () {
+    app.use(express.static(__dirname + '/app'));
+    app.use(express.static(__dirname + '/test'));
+    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+  });
+} else {
+  console.log('Production environment');
+  app.configure(function () {
+    app.use(express.static(__dirname + '/dist'));
+  });
+}
 
 // Configure the app
 app.configure(function () {
-  app.use(express.static(__dirname + '/public'));
   app.set('port', process.env.PORT || 3000);
   app.use(express.favicon());
   app.use(express.logger());
   app.use(express.bodyParser());
   app.use(express.methodOverride());
 });
-
-if (developmentEnv) {
-  console.log('Development environment');
-  app.configure(function () {
-    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-  });
-} else {
-  console.log('Production environment');
-  app.configure(function () {
-    app.use(express.errorHandler());
-  });
-}
 
 // Listen io
 var io = socketIo.listen(server, { log: developmentEnv });

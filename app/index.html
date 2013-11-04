@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="hamsterApp">
+<head>
+    <title>Hamster App</title>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- JQuery Libs -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- Angular Libs -->
+    <script src="bower_components/angular/angular.js"></script>
+
+    <!-- Angular App -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/directives.js"></script>
+    <script src="scripts/services.js"></script>
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/app.css">
+</head>
+<body ng-controller="MainCtrl">
+<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+        <a class="brand" href="#">Hamster App</a>
+        <button id="createButton" ng-click="createHamster()" class="btn btn-info pull-right">Create Hamster</button>
+    </div>
+</div>
+<div hamster-dir ng-repeat="hamster in hamsters" hamster="hamster" class="hamster" ondelete="deleteHamster(id)">
+    <img src="images/hamster.jpg" alt="Drag me" width="110" height="90">
+</div>
+</body>
+</html>

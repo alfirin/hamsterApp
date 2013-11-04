@@ -1,0 +1,14 @@
+{
+  "name": "hamster-app",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.0.8",
+    "jquery": "1.9.1",
+    "jquery-ui": "1.9.2",
+    "jqueryui-touch-punch":"*"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.0.8",
+    "angular-scenario": "1.0.8"
+  }
+}
