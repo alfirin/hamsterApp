@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/alfirin/hamsterApp.png)](https://travis-ci.org/alfirin/hamsterApp)
+
 Hamster App
 ======================
 
