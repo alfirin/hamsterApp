@@ -18,7 +18,7 @@ Runs like a typical express app:
 ## TODO List
 
     - [ ] Instead of using JQuery element.draggable use AngularJS
-    - [ ] Use Yeoman and grunt for the application
     - [ ] Test the application
+    - [x] Use Yeoman and grunt for the application
     - [x] Make the dragging feature available on mobile
     - [x] Drag a beautiful Hamster
